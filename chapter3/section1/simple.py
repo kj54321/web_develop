@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 # coding=utf-8
 from flask import Flask, request, abort, redirect, url_for
 
@@ -26,7 +27,7 @@ def login():
 @app.route('/secret/')
 def secret():
     abort(401)
-    print 'This is never executed'
+    print ('This is never executed')
 
 
 if __name__ == '__main__':
