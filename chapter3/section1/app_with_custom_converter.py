@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 # coding=utf-8
 import urllib
 
@@ -11,7 +12,7 @@ class ListConverter(BaseConverter):
 
     def __init__(self, url_map, separator='+'):
         super(ListConverter, self).__init__(url_map)
-        self.separator = urllib.unquote(separator)
+        self.separator = urllib.parse.unquote(separator)
 
     def to_python(self, value):
         return value.split(self.separator)
@@ -35,4 +36,4 @@ def list2(page_names):
 
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=9000)
+    app.run(host='0.0.0.0', port=9000, debug=True)
